@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+.sidenav {
+  height: 100%;
+  width: 300px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  font-style: oblique;
+  background-color:gray;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+.sidenav a, .dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: black;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  font-style: unset;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+.main {
+  margin-left: 200px; 
+  font-size: 20px; 
+  padding: 0px 10px;
+}
+
+.dropdown-container {
+  display: none;
+  background-color: lightgrey;
+  padding-left: 8px;
+}
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+</head>
+<body>
+
+<div class="sidenav">
+  <button class="dropdown-btn">WOMEN
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="clothes.html" target="f3">INDIAN WEAR</a>
+    <a href="wat.html" target="f3">WATCHES</a>
+    <a href="foot.html" target="f3">FOOTWEAR</a>
+  </div>
+  <button class="dropdown-btn">MEN
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="clothes1.html" target="f3">INDIAN WEAR</a>
+    <a href="wat1.html" target="f3">WATCHES</a>
+    <a href="foot1.html" target="f3">FOOTWEAR</a>
+  </div>
+  <button class="dropdown-btn">KIDS
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+   <a href="clothes2.html" target="f3">INDIAN WEAR</a>
+    <a href="wat2.html" target="f3">WATCHES</a>
+    <a href="foot2.html" target="f3">FOOTWEAR</a>
+  </div>
+</div>
+
+<script>
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+  this.classList.toggle("active");
+  var dropdownContent = this.nextElementSibling;
+  if (dropdownContent.style.display === "block") {
+  dropdownContent.style.display = "none";
+  } else {
+  dropdownContent.style.display = "block";
+  }
+  });
+}
+</script>
+
+</body>
+</html> 
